@@ -1,0 +1,17 @@
+<h2>Selamat Datang di Dashboard</h2>
+<button onclick="logout()" >Logout</button>
+
+<script>
+    const user =  JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!user) {
+        //jika belum login, redirect ke login
+        window.location.href = "login.html";
+    }
+
+    console.log(user.username);
+
+    function logout() {
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "login.html";
+    }
+</script>
